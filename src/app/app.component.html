@@ -1,0 +1,24 @@
+<p>Hola mundo</p>
+<p>{{title}}</p>
+
+<p>la suma de dos mas dos es {{2+2}}</p>
+
+<p> el doble de 3 es {{duplicarNumero(3)}}</p>
+
+<h2> Datos de la pelicula</h2>
+<p>Implementacion clasica con *ngFor</p>
+<div *ngFor="let pelicula of peliculas; let indice = index">
+  <p>No. {{indice+1}} Pelicula: {{pelicula.titulo|uppercase}}</p>
+  <p>Lanzamiento: {{pelicula.lanzamiento|date:"dd/MM/yyyy hh:mm:ss"}}</p>
+  <p>Precio: {{1200.00 |currency:"GTQ "}}</p>
+  <br>
+</div>
+<p>Implementacion moderna con &#64;For; </p>
+@for (pelicula of peliculas; track $index) {
+  <div>
+    <p>No. {{$index+1}} Pelicula: {{pelicula.titulo|uppercase}}</p>
+    <p>Lanzamiento: {{pelicula.lanzamiento|date:"dd/MM/yyyy hh:mm:ss"}}</p>
+    <p>Precio: {{1200.00 |currency:"GTQ "}}</p>
+    <br>
+  </div>
+}
