@@ -62,7 +62,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 >>>>>>> dd6411f (First commit: ngFor y @for example)
 
-## This proyect is an example of ngFor and @for
+## This proyect is an example of ngFor
 ```code
     <div *ngFor="let pelicula of peliculas; let indice = index">
         <p>No. {{indice+1}} Pelicula: {{pelicula.titulo|uppercase}}</p>
@@ -72,4 +72,15 @@ For more information on using the Angular CLI, including detailed command refere
     </div>
 </code>
 
+```
+
+## This proyect is an example of @for
+```code
+@for (pelicula of peliculas; track $index) {
+  <div>
+    <p>No. {{$index+1}} Pelicula: {{pelicula.titulo|uppercase}}</p>
+    <p>Lanzamiento: {{pelicula.lanzamiento|date:"dd/MM/yyyy hh:mm:ss"}}</p>
+    <p>Precio: {{1200.00 |currency:"GTQ "}}</p>
+    <br>
+  </div>
 ```
